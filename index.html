@@ -92,8 +92,23 @@
     </div>
     <!-- Navbar End -->
 
-
     <!-- Carousel Start -->
+    <style>
+        /* Set fixed height for each slide */
+        .owl-carousel-item {
+            height: 600px; /* or any height you want */
+            position: relative;
+        }
+
+        /* Force image to fill the space and crop if needed */
+        .owl-carousel-item img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+
     <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
@@ -137,6 +152,19 @@
             </div>
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="img/easyergo_pcb.jpg" alt="">
+                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .4);">
+                    <div class="container">
+                        <div class="row justify-content-start">
+                            <div class="col-10 col-lg-8">
+                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">EasyErgo</h5>
+                                <h1 class="display-3 text-white animated slideInDown mb-4">A digital tool to support ergonomists</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="owl-carousel-item position-relative">
+                <img class="img-fluid" src="img/easyergo_dashboard.jpg" alt="">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .4);">
                     <div class="container">
                         <div class="row justify-content-start">
