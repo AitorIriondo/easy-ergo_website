@@ -10,7 +10,22 @@
       "Bash(curl:*)",
       "Bash(cmd /c:*)",
       "Bash(powershell -Command:*)",
-      "Bash(powershell.exe -Command:*)"
+      "Bash(powershell.exe -Command:*)",
+      "Bash(find:*)",
+      "Bash(powershell.exe -File \"C:/tmp/list_files.ps1\")",
+      "Bash(powershell.exe -File \"C:\\\\Users\\\\iria\\\\AppData\\\\Local\\\\Temp\\\\list_photos.ps1\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\iria\\\\AppData\\\\Local\\\\Temp\\\\list_photos.ps1\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\iria\\\\AppData\\\\Local\\\\Temp\\\\list_videos.ps1\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -File \"C:\\\\Users\\\\iria\\\\AppData\\\\Local\\\\Temp\\\\list_img.ps1\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Get-Content ''C:\\\\Users\\\\iria\\\\AppData\\\\Local\\\\Temp\\\\list_photos.ps1''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Content -Path ''C:\\\\Users\\\\iria\\\\AppData\\\\Local\\\\Temp\\\\list_photos.ps1'' -Value ''Get-ChildItem -Path \"\"\\\\\\\\staffnas1\\\\StaffHome\\\\iria\\\\Documents\\\\My Pictures\\\\EasyErgo\\\\Photos\"\" | Select-Object Name, Length | Format-Table -AutoSize''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"Set-Content -Path ''C:\\\\Users\\\\iria\\\\AppData\\\\Local\\\\Temp\\\\list_videos.ps1'' -Value ''Get-ChildItem -Path \"\"\\\\\\\\staffnas1\\\\StaffHome\\\\iria\\\\Documents\\\\My Pictures\\\\EasyErgo\\\\Videos\"\" | Select-Object Name, Length | Format-Table -AutoSize''\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"\n$unc = [string]::Concat\\([char]92, [char]92, ''staffnas1\\\\StaffHome\\\\iria\\\\Documents\\\\My Pictures\\\\EasyErgo\\\\Photos''\\);\nGet-ChildItem -Path $unc | Select-Object Name, Length | Format-Table -AutoSize\n\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -EncodedCommand \"RwBlAHQALQBDAGgAaQBsAGQASQB0AGUAbQAgAC0AUABhAHQAaAAgACIAXABcAHMAdABhAGYAZgBuAGEAcwAxAFwAUwB0AGEAZgBmAEgAbwBtAGUAXABpAHIAaQBhAFwARABvAGMAdQBtAGUAbgB0AHMAXABNAHkAIABQAGkAYwB0AHUAcgBlAHMAXABFAGEAcwB5AEUAcgBnAG8AXABQAGgAbwB0AG8AcwAiACAAfAAgAFMAZQBsAGUAYwB0AC0ATwBiAGoAZQBjAHQAIABOAGEAbQBlACwAIABMAGUAbgBnAHQAaAAgAHwAIABGAG8AcgBtAGEAdAAtAFQAYQBiAGwAZQAgAC0AQQB1AHQAAQB4AGkAegBlAA==\")",
+      "Bash(powershell.exe -ExecutionPolicy Bypass -Command \"\n$b = [System.Text.Encoding]::Unicode.GetBytes\\(''Get-ChildItem -Path \"\"\\\\\\\\staffnas1\\\\StaffHome\\\\iria\\\\Documents\\\\My Pictures\\\\EasyErgo\\\\Photos\"\" | Select-Object Name, Length | Format-Table -AutoSize''\\);\n[Convert]::ToBase64String\\($b\\)\n\")",
+      "Bash(python3 -c:*)",
+      "Bash(where:*)",
+      "Bash(where.exe:*)"
     ]
   }
 }

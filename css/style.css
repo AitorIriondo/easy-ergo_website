@@ -247,7 +247,9 @@ h6.text-secondary.text-uppercase {
 
 /*** Carousel item height (moved from index.html inline style) ***/
 .owl-carousel-item {
-    height: 600px;
+    height: 75vh;
+    min-height: 480px;
+    max-height: 800px;
     position: relative;
 }
 
@@ -255,8 +257,15 @@ h6.text-secondary.text-uppercase {
     height: 100%;
     width: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center center;
 }
+
+/* Per-slide object-position tweaks */
+.owl-carousel-item:nth-child(1) img { object-position: center 30%; } /* app-splash: show screen */
+.owl-carousel-item:nth-child(2) img { object-position: center 25%; } /* app-record: tablet screen */
+.owl-carousel-item:nth-child(3) img { object-position: center 40%; } /* easysense-hardware: hardware */
+.owl-carousel-item:nth-child(4) img { object-position: center 35%; } /* field-assessment: desk scene */
+.owl-carousel-item:nth-child(5) img { object-position: center top;  } /* dashboard screenshot: top is important */
 
 
 /*** Product image wrappers (replaces inline style="height: 520px") ***/
@@ -323,11 +332,13 @@ h6.text-secondary.text-uppercase {
 
 @media (max-width: 575.98px) {
     .header-carousel .owl-carousel-item {
-        min-height: 380px;
+        min-height: 300px;
     }
 
     .owl-carousel-item {
-        height: 380px;
+        height: 55vh;
+        min-height: 300px;
+        max-height: 460px;
     }
 }
 
@@ -366,7 +377,7 @@ h6.text-secondary.text-uppercase {
 /* Page header background (inner pages) */
 .page-header {
     background: linear-gradient(135deg, rgba(23,34,77,.85) 0%, rgba(30,96,170,.75) 100%),
-                url(../img/background.png) center center no-repeat;
+                url(../img/field-assessment.jpg) center center no-repeat;
     background-size: cover;
 }
 
@@ -390,15 +401,11 @@ h6.text-secondary.text-uppercase {
 /*** Video / Demo section ***/
 .video {
     position: relative;
-    padding: 8rem 0 10rem 0;
-    background: linear-gradient(135deg, rgba(23,34,77,.88) 0%, rgba(30,96,170,.78) 100%),
-                url(../img/background.png) center center no-repeat;
+    background: linear-gradient(135deg, rgba(23,34,77,.95) 0%, rgba(30,96,170,.90) 100%),
+                url(../img/app-record.jpg) center center no-repeat;
     background-size: cover;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
 }
+
 
 .video .btn-play {
     position: relative;
@@ -690,7 +697,7 @@ h6.text-secondary.text-uppercase {
 
     /* Video section padding */
     .video {
-        padding: 5rem 0 6rem 0;
+        padding: 3rem 0 4rem 0;
     }
 
     /* Page header heading size */
