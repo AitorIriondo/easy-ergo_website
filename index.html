@@ -1,354 +1,598 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>EasyErgo &mdash; Digital Ergonomics Assessment Tool</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="ergonomics, workplace assessment, RULA, REBA, QEC, digital ergonomics, EasyErgo" name="keywords">
-    <meta content="EasyErgo is a digital platform for ergonomists — combining AI-assisted assessments, sensor data, and a central dashboard to make workplace evaluations faster and more effective." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EasyErgo — An open ergonomics platform for every workplace | RULA, REBA, AFF, NIOSH, KIM, QEC and your own</title>
+    <meta name="description" content="EasyErgo is an open, science-backed ergonomics platform from Sweden. Standard methods — RULA, REBA, AFF, NIOSH, KIM, QEC — and the room to add the next one and yours. Scored from ordinary worker video, no markers or special hardware.">
+    <meta name="keywords" content="ergonomic risk assessment, ergonomics platform, RULA, REBA, AFF, NIOSH, KIM, QEC, OWAS, RAMP, digital human modeling, video pose estimation, workplace ergonomics, posture analysis, ergonomics software, custom ergonomic methods, Swedish ergonomics">
+    <meta name="author" content="EasyErgo">
+    <meta name="theme-color" content="#0F1F3D">
+    <link rel="canonical" href="https://www.easy-ergo.co/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.easy-ergo.co/">
+    <meta property="og:title" content="EasyErgo — An open ergonomics platform for every workplace">
+    <meta property="og:description" content="A Swedish, science-backed ergonomics platform. Standard methods (RULA, REBA, AFF, NIOSH, KIM, QEC), more on the way, and your own methods welcome.">
+    <meta property="og:image" content="https://www.easy-ergo.co/img/field-forms.jpg">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="EasyErgo">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EasyErgo — An open ergonomics platform for every workplace">
+    <meta name="twitter:description" content="A Swedish, science-backed ergonomics platform. Standard methods, more on the way, and your own methods welcome.">
+    <meta name="twitter:image" content="https://www.easy-ergo.co/img/field-forms.jpg">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link rel="icon" href="img/favicon.ico">
 
-    <!-- Google Web Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/site.css">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Three.js + meshopt for the in-browser GLB viewer.
+         Loaded eagerly (not async) so order is preserved: THREE before
+         OrbitControls before glb-viewer. Meshopt is an ES module that
+         exposes its decoder on window. -->
+    <script src="js/three/three.min.js"></script>
+    <script src="js/three/OrbitControls.js"></script>
+    <script type="module">
+        import {MeshoptDecoder} from './js/three/meshopt_decoder.module.js';
+        await MeshoptDecoder.ready;
+        window.MeshoptDecoder = MeshoptDecoder;
+    </script>
+    <script src="js/glb-viewer.js" defer></script>
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <!-- Structured data: SoftwareApplication + Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "EasyErgo",
+          "url": "https://www.easy-ergo.co/",
+          "applicationCategory": "BusinessApplication",
+          "operatingSystem": "Web (browser)",
+          "description": "AI-driven platform that produces standardized ergonomic risk assessments (RULA, REBA, AFF, NIOSH, KIM, QEC) from ordinary video using 3D pose reconstruction.",
+          "featureList": [
+            "RULA — Rapid Upper Limb Assessment",
+            "REBA — Rapid Entire Body Assessment",
+            "AFF — Arm Force Field (La Delfa & Potvin)",
+            "NIOSH Lifting Equation",
+            "KIM — Key Indicator Method (six sub-methods)",
+            "QEC — Quick Exposure Check",
+            "3D posture reconstruction from video",
+            "REST API for PLM integration",
+            "Export to Process Simulate, Delmia, Jack, IPS IMMA, Tecnomatix, Xsens MVN Analyze"
+          ],
+          "creator": {"@id": "https://www.easy-ergo.co/#organization"}
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://www.easy-ergo.co/#organization",
+          "name": "EasyErgo",
+          "url": "https://www.easy-ergo.co/",
+          "email": "aitor.easyergo@gmail.com",
+          "logo": "https://www.easy-ergo.co/img/easyergo_no_background.png",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Skövde",
+            "addressCountry": "SE"
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light d-none d-lg-block">
-        <div class="row align-items-center top-bar">
-            <div class="col-lg-3 col-md-12 text-center text-lg-start">
-                <a href="index.html" class="navbar-brand m-0 p-0">
-                    <h1 class="text-primary m-0">EasyErgo</h1>
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg" aria-label="Primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" aria-label="EasyErgo home">
+                    <span class="ee-wordmark" style="font-size:1.5rem"><span class="easy">Easy</span><span class="ergo">Ergo</span></span>
                 </a>
-            </div>
-            <div class="col-lg-9 col-md-12 text-end">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                    <p class="m-0">Sk&ouml;vde, Sweden</p>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <i class="far fa-envelope-open text-primary me-2"></i>
-                    <p class="m-0">aitor.easyergo@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-
-    <!-- Navbar Start -->
-    <div class="container-fluid nav-bar bg-light">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
-            <a href="index.html" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
-                <h1 class="text-primary m-0">EasyErgo</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav me-auto">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About us</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    <a href="https://dashboard.easy-ergo.co" class="nav-item nav-link">Dashboard</a>
-                    <a href="privacy.html" class="nav-item nav-link">Privacy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#methods">Methods</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#demo">Demo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#integrations">Integrations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                            <a class="btn-dashboard" href="https://dashboard.easy-ergo.co">Open Dashboard</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-    </div>
-    <!-- Navbar End -->
+    </header>
 
-    <!-- Carousel Start -->
-    <div class="container-fluid p-0 mb-5">
-        <div class="owl-carousel header-carousel position-relative">
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/app-results-clean.jpg" alt="EasyErgo Android app showing Results screen on tablet">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .35);">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-10 col-lg-8">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">EasyErgo</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">A digital tool to support ergonomists</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/app-ai-overlay.jpg" alt="EasyErgo Android app showing AI skeleton overlay on factory worker">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .35);">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-10 col-lg-8">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">EasyErgo Android</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Assess ergonomics in the field</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/field-forms.jpg" alt="Ergonomist using phone and QEC paper forms with laptop in the field">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .35);">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-10 col-lg-8">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">EasySense</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Measure forces, vibration, and more</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/field-assessment.jpg" alt="Ergonomist using phone and paper forms in the field">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .35);">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-10 col-lg-8">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">In the Field</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">From paper forms to digital assessments</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-carousel-item position-relative">
-                <img class="img-fluid" src="img/dashboard-rula.png" alt="EasyErgo Dashboard showing RULA evaluation results">
-                <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(0, 0, 0, .35);">
-                    <div class="container">
-                        <div class="row justify-content-start">
-                            <div class="col-10 col-lg-8">
-                                <h5 class="text-white text-uppercase mb-3 animated slideInDown">EasyErgo Dashboard</h5>
-                                <h1 class="display-3 text-white animated slideInDown mb-4">Your central assessment dashboard</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Carousel End -->
-
-
-    <!-- About Start -->
-    <div class="container-xxl pt-1 pb-1">
+    <main id="main">
+    <!-- Hero -->
+    <section class="hero" aria-label="Introduction">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="text-secondary text-uppercase">About EasyErgo</h6>
-                    <h1 class="mb-4">What is EasyErgo?</h1>
-                    <p class="mb-4">
-                        EasyErgo was created to make ergonomics evaluations easier, faster, and more effective for professionals in the field.
-                        By introducing digital tools specifically designed for ergonomists, it combines the efficiency of mobile technology
-                        with the precision of standardized assessment methods.<br><br>
-                        Our goal is to help you carry out evaluations in less time, add more objectivity through integrated measurements and AI-assisted
-                        analysis, and keep all your work organized and accessible. Whether you're assessing on-site or managing data across
-                        multiple projects, EasyErgo turns digitalization into a practical advantage for better-managed, evidence-based ergonomics.
-                    </p>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 reveal">
+                    <p class="ee-wordmark on-dark" style="font-size:2.5rem"><span class="easy">Easy</span><span class="ergo">Ergo</span></p>
+                    <h1>Ergonomics, for&nbsp;every workplace.</h1>
+                    <p class="lead">An open, science-backed ergonomics platform. Standard methods — RULA, REBA, AFF, NIOSH, KIM, QEC — and the room to add the next one, and yours. Built in Sweden so any team can do proper ergonomics, without specialists or special hardware.</p>
+                    <div class="hero-cta">
+                        <a href="https://dashboard.easy-ergo.co" class="btn btn-primary btn-lg">Open the dashboard</a>
+                        <a href="#methods" class="btn btn-outline-light btn-lg">Explore the platform</a>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal">
+                    <div class="hero-pair">
+                        <div class="hero-cell">
+                            <span class="hero-cell-label">Source video</span>
+                            <video id="hero-source-video" autoplay muted loop playsinline preload="auto" data-loop-watchdog>
+                                <source src="img/demo-source-video.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="hero-cell">
+                            <span class="hero-cell-label">3D pose · EasyAI</span>
+                            <!-- data-glb-yaw / data-glb-pitch (degrees) place the
+                                 fixed hero camera. yaw: 0=front, 90=right side,
+                                 180=back, -90=left side.
+                                 data-glb-sync-video locks the GLB time to the
+                                 source video on its left, so they stay in sync
+                                 across loops. -->
+                            <div class="glb-host"
+                                 data-glb="img/demo-mesh.glb"
+                                 data-glb-eager
+                                 data-glb-interactive="false"
+                                 data-glb-orbit="false"
+                                 data-glb-yaw="135"
+                                 data-glb-pitch="0"
+                                 data-glb-sync-video="#hero-source-video"
+                                 data-glb-bg="0x0a1730">
+                                <div class="glb-loading" data-glb-overlay>
+                                    <div class="glb-spinner"></div>
+                                    <div>Loading 3D model…</div>
+                                    <div class="glb-progress"><div class="glb-progress-bar" data-glb-progress></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- About End -->
+    </section>
 
-    <!-- About (Section 2) Start -->
-    <div class="container-xxl pt-1 pb-1">
+    <!-- Brand essence: fast + easy + reaches workplaces that couldn't get ergonomics before -->
+    <section class="section section-light text-center" aria-label="What EasyErgo means">
+        <div class="container reveal">
+            <p class="eyebrow">Easy + Ergo</p>
+            <h2 class="mb-3">Ergonomics, made fast and easy.</h2>
+            <p class="lead-muted mx-auto" style="max-width: 760px">
+                The traditional workflow — paper forms, specialist consultants, weeks of waiting — has kept good ergonomic practice out of small shops, fast-changing factories and growing teams. EasyErgo brings the same standard methods to any workplace with a phone and a browser.
+            </p>
+        </div>
+    </section>
+
+    <!-- The 4-step workflow -->
+    <section class="section" aria-labelledby="how-h">
+        <div class="container">
+            <div class="row mb-5 reveal">
+                <div class="col-lg-7">
+                    <p class="eyebrow">How it works</p>
+                    <h2 id="how-h">From recording to risk scores — in four steps.</h2>
+                    <p class="lead-muted">All in the browser. The whole pipeline runs in minutes, not the days a traditional ergonomic study takes — so you can show results in the room, on the same visit.</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 reveal">
+                    <article class="step-card">
+                        <span class="step-number">1</span>
+                        <h3>Capture</h3>
+                        <p>Film the workstation with any camera — a phone is enough. Upload it to the EasyAI Gallery.</p>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <article class="step-card">
+                        <span class="step-number">2</span>
+                        <h3>Process</h3>
+                        <p>EasyAI rebuilds the worker's full-body posture in 3D, frame by frame. About three minutes per minute of video — fast enough to discuss findings on the spot.</p>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <article class="step-card">
+                        <span class="step-number">3</span>
+                        <h3>Score</h3>
+                        <p>Pick a method, set load and frequency, and get standard risk scores plus per-frame charts and high-risk markers.</p>
+                    </article>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <article class="step-card">
+                        <span class="step-number">4</span>
+                        <h3>Export</h3>
+                        <p>Send results to your simulation tool, your PLM or out as a PDF report. <strong>OSIM/MOT</strong> for OpenSim, <strong>MVNX</strong> for Xsens, plus JSON, CSV and GLB.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methods -->
+    <section class="section section-dark" id="methods" aria-labelledby="methods-h">
+        <div class="container">
+            <div class="row mb-5 reveal">
+                <div class="col-lg-8">
+                    <p class="eyebrow">Methodology — open by design</p>
+                    <h2 id="methods-h" class="mb-3">Six methods today. Built to grow with yours.</h2>
+                    <p class="lead" style="color:rgba(255,255,255,0.78)">The platform ships with the six most-cited assessments out of the box. The roadmap adds OWAS and RAMP next, and the architecture is built so we can plug in <strong>your company's proprietary methods</strong> alongside the standard ones — same capture, same workflow, your scoring rules.</p>
+                </div>
+            </div>
+
+            <div class="methods-grid reveal">
+                <article class="method-card risk-mid">
+                    <div class="label">RULA</div>
+                    <div class="score">6</div>
+                    <div class="sub">Medium risk</div>
+                    <p class="desc">Rapid Upper Limb Assessment. Integer score 1–7+. Focused on neck, trunk and upper limbs.</p>
+                </article>
+                <article class="method-card risk-high">
+                    <div class="label">REBA</div>
+                    <div class="score">9</div>
+                    <div class="sub">High risk</div>
+                    <p class="desc">Rapid Entire Body Assessment. Integer score 1–15. Whole-body postural load.</p>
+                </article>
+                <article class="method-card risk-mid">
+                    <div class="label">AFF</div>
+                    <div class="score percent">62.4%</div>
+                    <div class="sub">% population capable</div>
+                    <p class="desc">Arm Force Field. Predicts maximum acceptable arm strength via a neural-net model (La Delfa &amp; Potvin, 2017).</p>
+                </article>
+                <article class="method-card risk-mid">
+                    <div class="label">NIOSH</div>
+                    <div class="score decimal">1.3</div>
+                    <div class="sub">Lifting Index</div>
+                    <p class="desc">NIOSH Lifting Equation. Decimal LI for manual lifting tasks. Two reference postures.</p>
+                </article>
+                <article class="method-card risk-mid">
+                    <div class="label">KIM</div>
+                    <div class="score">27</div>
+                    <div class="sub">Orange band</div>
+                    <p class="desc">Key Indicator Method (German LASI). Six sub-methods: LHC, PP, MHO, ABP, BF, BM.</p>
+                </article>
+                <article class="method-card risk-high">
+                    <div class="label">QEC</div>
+                    <div class="score">87</div>
+                    <div class="sub">Action Level 3</div>
+                    <p class="desc">Quick Exposure Check. Per-region scores: back, shoulder, wrist, neck, plus driving / vibration / pace / stress.</p>
+                </article>
+
+                <!-- Roadmap card -->
+                <article class="method-card method-card-roadmap">
+                    <div class="label">On the roadmap</div>
+                    <div class="score-text">OWAS · RAMP</div>
+                    <p class="desc">Two more standard methods landing in the platform — the result classes are sketched, scoring next.</p>
+                </article>
+
+                <!-- Custom method card -->
+                <article class="method-card method-card-custom">
+                    <div class="label">Your method?</div>
+                    <div class="score-text">+ Custom</div>
+                    <p class="desc">Published research method we don't ship yet? <strong>We add it for free.</strong> Company-proprietary scoring rule? We build it as a paid custom integration — same dashboard, same API, same exports.</p>
+                    <a class="custom-cta" href="contact.html">Talk to us →</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Science / research roots -->
+    <section class="section" aria-labelledby="science-h">
         <div class="container">
             <div class="row g-5 align-items-center">
-                <!-- IMAGE LEFT on desktop, SECOND on mobile -->
-                <div class="col-lg-6 pt-4 order-2 order-lg-1">
-                    <img
-                        class="img-fluid rounded shadow-sm w-100"
-                        src="img/app-ai-overlay.jpg"
-                        alt="EasyErgo Android app showing AI skeleton overlay on factory worker"
-                    >
+                <div class="col-lg-7 reveal">
+                    <p class="eyebrow">Backed by peer-reviewed research</p>
+                    <h2 id="science-h" class="mb-3">EasyErgo is a Swedish company born from research at the <a href="https://www.his.se/en/" target="_blank" rel="noopener">University of Skövde</a>.</h2>
+                    <p class="lead-muted mb-4">Every method in EasyErgo — RULA, REBA, AFF, NIOSH, KIM, QEC — comes straight from the published literature, with the source and version stored alongside every result. The platform itself grew out of years of peer-reviewed work in digital human modelling and the optimisation of productivity and worker well-being.</p>
+                    <ul class="list-unstyled mb-4">
+                        <li class="mb-2"><i class="bi bi-mortarboard text-primary me-2"></i>Doctoral thesis at the University of Skövde (2023)</li>
+                        <li class="mb-2"><i class="bi bi-journal-text text-primary me-2"></i>Publications in <em>Advanced Engineering Informatics</em>, <em>Sustainability</em>, <em>IISE Transactions on Occupational Ergonomics</em>, <em>IEA</em>, <em>SPS</em>, <em>DHM</em>, <em>AHFE</em></li>
+                        <li class="mb-2"><i class="bi bi-bar-chart-line text-primary me-2"></i>Methodologies traceable to their source: La Delfa &amp; Potvin (AFF), German LASI (KIM), revised NIOSH equation, RULA &amp; REBA standards</li>
+                    </ul>
+                    <a href="about.html#publications" class="btn btn-outline-primary">Read the publications</a>
                 </div>
-
-                <!-- TEXT RIGHT on desktop, FIRST on mobile -->
-                <div class="col-lg-6 wow fadeInUp order-1 order-lg-2" data-wow-delay="0.5s">
-                    <h1 class="mb-4">EasyErgo Android</h1>
-                    <p class="mb-4">
-                        EasyErgo for Android is the ergonomist's field tool. Capture photos, document the task, and run standard methods
-                        (e.g., RULA, REBA, QEC) right on the tablet&mdash;on site with workers or later in the office. Your work is saved locally
-                        and can sync to the EasyErgo Server whenever you're online.<br><br>
-                        Built-in AI estimates human pose from images to pre-fill key postures and automate parts of the evaluation while you
-                        keep full control over criteria and scoring. Re-evaluate in seconds as conditions change, and use automatic picture
-                        description generation to speed up reporting. The result: faster, consistent assessments with less admin and more time
-                        for conversations that matter.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- About (Section 2) End -->
-
-    <!-- About (Section 3) Start -->
-    <div class="container-xxl pt-1 pb-1">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h1 class="mb-4">EasySense</h1>
-                    <p class="mb-4">
-                        EasySense is our practical sensing companion for EasyErgo. It measures forces, vibration, temperature, humidity, and
-                        noise levels in a compact, affordable setup that pairs with the Android app. Readings are time-synced with your photos
-                        and notes so you can connect exposure to posture and task context.<br><br>
-                        While not positioned as a high-end industrial instrument, EasySense delivers the accuracy and stability needed for
-                        day-to-day ergonomics work. See live charts, record sessions, and capture peak values for quick risk screening. It's a
-                        straightforward way to add objective data to your evaluations&mdash;without the complexity or cost of specialized equipment.
-                    </p>
-                </div>
-                <div class="col-lg-6 pt-4 product-img-section">
-                    <div class="position-relative h-100 wow fadeInUp" data-wow-delay="0.5s">
-                        <img class="position-absolute img-fluid w-100 h-100 easysense-img" src="img/easyergo_pcb.jpg" style="object-fit: cover; object-position: center center;" alt="EasySense v1.0 prototype PCB">
+                <div class="col-lg-5 reveal">
+                    <div class="shot-frame" style="aspect-ratio:16/9; overflow:hidden">
+                        <video autoplay muted loop playsinline preload="metadata" style="width:100%;height:100%;object-fit:cover;display:block">
+                            <source src="img/demo-source-video.mp4" type="video/mp4">
+                        </video>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- About (Section 3) End -->
+    </section>
 
-    <!-- About (Section 4) Start -->
-    <div class="container-xxl pt-1 pb-1">
+    <!-- Why teams pick EasyErgo -->
+    <section class="section" id="why" aria-labelledby="why-h">
         <div class="container">
-            <div class="row g-5 align-items-center">
-                <!-- IMAGE LEFT on desktop, SECOND on mobile -->
-                <div class="col-lg-6 pt-4 order-2 order-lg-1">
-                    <img
-                        class="img-fluid rounded shadow-sm w-100"
-                        src="img/demo-video-evaluation.gif"
-                        alt="EasyErgo Dashboard — video evaluation with live RULA scoring"
-                    >
+            <div class="row mb-5 reveal">
+                <div class="col-lg-8">
+                    <p class="eyebrow">Why teams pick EasyErgo</p>
+                    <h2 id="why-h">Practical, fast, and built around your data.</h2>
                 </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-stopwatch"></i></div>
+                        <h3>Fast enough to show in the room</h3>
+                        <p>One minute of video → results in about three. Walk through the findings with the operator on the same visit.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-shield-lock"></i></div>
+                        <h3>Hosted securely in Sweden</h3>
+                        <p>Your data lives on our server in Sweden — GDPR-friendly by default. If you'd rather host it on your own infrastructure, tell us, we're open to that.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-key"></i></div>
+                        <h3>Simple licensing</h3>
+                        <p>One licence, all the videos you need. No per-video fees, no per-seat surprises — predictable cost as you scale up.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 reveal">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="bi bi-puzzle"></i></div>
+                        <h3>Method-agnostic</h3>
+                        <p>Six standard methods today plus a roadmap for OWAS, RAMP, and your company's own scoring rules.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- TEXT RIGHT on desktop, FIRST on mobile -->
-                <div class="col-lg-6 wow fadeInUp order-1 order-lg-2" data-wow-delay="0.5s">
-                    <h1 class="mb-4">EasyErgo Dashboard</h1>
-                    <p class="mb-4">
-                        The EasyErgo Dashboard is your central hub. Evaluations and media from the tablet upload automatically, so your
-                        files, images, and reports stay organized and backed up. Compare assessments across tasks, dates, or teams, and share
-                        selected results with colleagues or clients using role-based access.<br><br>
-                        Manage users and projects, keep versioned records, and export clean reports when you're ready. It's the simplest way
-                        to move from individual assessments to a shared, searchable knowledge base that supports better decisions over time.
+    <!-- We're with you, not just shipping software -->
+    <section class="section section-light" id="services" aria-labelledby="services-h">
+        <div class="container">
+            <div class="row g-5 align-items-start">
+                <div class="col-lg-6 reveal">
+                    <p class="eyebrow">We're with you, not just shipping software</p>
+                    <h2 id="services-h" class="mb-3">New to ergonomics? We help you get there.</h2>
+                    <p class="lead-muted mb-0">A platform isn't enough if your team is starting from scratch on workplace ergonomics. We onboard you, teach the fundamentals, help you meet local guidelines, and make the business case so leadership sees the return.</p>
+                </div>
+                <div class="col-lg-6 reveal">
+                    <ul class="service-list">
+                        <li>
+                            <span class="service-icon"><i class="bi bi-person-check"></i></span>
+                            <div>
+                                <h4>Hands-on onboarding</h4>
+                                <p>We walk your team through the first evaluations on real workstations — capture, scoring, reporting — until it's a routine your people own.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="service-icon"><i class="bi bi-mortarboard"></i></span>
+                            <div>
+                                <h4>Ergonomics fundamentals</h4>
+                                <p>Short, practical training on the methods that matter for your work — RULA, REBA, NIOSH, AFF and the rest — so your team understands the scores, not just sees them.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="service-icon"><i class="bi bi-clipboard2-check"></i></span>
+                            <div>
+                                <h4>Guideline compliance</h4>
+                                <p>We help you map your processes to the relevant occupational-health guidelines so you can show the work has been done — and avoid the risks of having ignored it.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="service-icon"><i class="bi bi-graph-up-arrow"></i></span>
+                            <div>
+                                <h4>A clear ROI</h4>
+                                <p>We help you measure what redesigning a workstation actually saves — time, sick days, rework, claims — so the investment is easy to defend to finance.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <a class="btn btn-primary mt-4" href="contact.html">Talk to us about onboarding</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live demo -->
+    <section class="section section-light" id="demo" aria-labelledby="demo-h">
+        <div class="container">
+            <div class="row mb-5 reveal">
+                <div class="col-lg-8">
+                    <p class="eyebrow">Pose estimation in the browser</p>
+                    <h2 id="demo-h" class="mb-3">From plain video to live pose estimation.</h2>
+                    <p class="lead-muted">Left: the source recording. Right: the full-body 3D pose EasyAI estimated from it — same movement, every joint, fully rotatable. Drag to orbit the model.</p>
+                </div>
+            </div>
+
+            <div class="demo-stage reveal">
+                <div class="demo-pair">
+                    <!-- Demo section uses the second source pair (overhead-reach
+                         scene) so the visitor sees a different ergonomic case
+                         than the one in the hero. Lazy-loaded when in view.
+                         GLB time is locked to the source video below for sync. -->
+                    <div class="demo-cell">
+                        <span class="demo-cell-label">Source video</span>
+                        <video id="demo-source-video" autoplay muted loop playsinline preload="metadata" data-loop-watchdog>
+                            <source src="img/demo-source-video-2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="demo-cell">
+                        <span class="demo-cell-label">3D pose · interactive</span>
+                        <div class="glb-host"
+                             data-glb="img/demo-mesh-2.glb"
+                             data-glb-interactive="true"
+                             data-glb-orbit="true"
+                             data-glb-orbit-speed="0.25"
+                             data-glb-sync-video="#demo-source-video"
+                             data-glb-bg="0x0a1730">
+                            <div class="glb-loading" data-glb-overlay>
+                                <div class="glb-spinner"></div>
+                                <div>Loading 3D model…</div>
+                                <div class="glb-progress"><div class="glb-progress-bar" data-glb-progress></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="demo-hint">
+                    <i class="bi bi-mouse2 me-1"></i>Left-drag to orbit · right-drag to pan · scroll to zoom
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before / after EasyErgo -->
+    <section class="section" aria-labelledby="compare-h">
+        <div class="container">
+            <div class="row mb-5 reveal">
+                <div class="col-lg-7">
+                    <p class="eyebrow">Why EasyErgo</p>
+                    <h2 id="compare-h">A practice that hasn't changed in decades — until now.</h2>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 reveal">
+                    <article class="compare-card before">
+                        <img src="img/field-forms.jpg" alt="Ergonomist using paper QEC forms with a laptop on a workshop floor" loading="lazy">
+                        <div class="body">
+                            <span class="tag">Before</span>
+                            <h3>Manual scoring on paper</h3>
+                            <p class="muted mb-0">Paper forms, stopwatch, observation by eye. Hours per workstation. Re-evaluating after a change means starting over.</p>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-md-6 reveal">
+                    <article class="compare-card after">
+                        <div class="mock-result" aria-hidden="true">
+                            <div class="mock-result-head">
+                                <span class="mock-result-label">RULA Evaluation</span>
+                                <span class="mock-result-pill">Medium risk</span>
+                            </div>
+                            <div class="mock-result-grid">
+                                <div class="mock-result-cell">
+                                    <span class="mock-result-cell-label">Max</span>
+                                    <span class="mock-result-cell-num">6</span>
+                                </div>
+                                <div class="mock-result-cell">
+                                    <span class="mock-result-cell-label">Avg</span>
+                                    <span class="mock-result-cell-num">4.2</span>
+                                </div>
+                                <div class="mock-result-cell">
+                                    <span class="mock-result-cell-label">High-risk frames</span>
+                                    <span class="mock-result-cell-num">17</span>
+                                </div>
+                            </div>
+                            <div class="mock-result-bar">
+                                <div class="mock-result-bar-fill" style="width:62%"></div>
+                            </div>
+                            <div class="mock-result-foot">
+                                <span class="mock-dot dot-mid"></span>RULA · <span class="mock-dot dot-high"></span>REBA · <span class="mock-dot dot-mid"></span>AFF · <span class="mock-dot dot-mid"></span>NIOSH · <span class="mock-dot dot-mid"></span>KIM · <span class="mock-dot dot-high"></span>QEC
+                            </div>
+                        </div>
+                        <div class="body">
+                            <span class="tag">With EasyErgo</span>
+                            <h3>Standardized scores from a recording</h3>
+                            <p class="muted mb-0">Every frame scored. High-risk moments surfaced automatically. Re-run any method on the same capture in seconds.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations -->
+    <section class="section" id="integrations" aria-labelledby="integrations-h">
+        <div class="container">
+            <div class="row mb-5 reveal">
+                <div class="col-lg-8">
+                    <p class="eyebrow">Built to fit your stack</p>
+                    <h2 id="integrations-h">Export to the simulation and analysis tools you already use.</h2>
+                    <p class="lead-muted">Posture, 3D models, risk scores and full reports flow out in <strong>JSON</strong>, <strong>CSV</strong>, <strong>GLB</strong> and <strong>PDF</strong> — plus <strong>OSIM</strong> and <strong>MOT</strong> for OpenSim biomechanical analysis, and <strong>MVNX</strong> for Xsens animation pipelines. A REST API connects EasyErgo to your PLM, MES and ERP — no copy-paste.</p>
+                </div>
+            </div>
+            <div class="integrations-grid reveal">
+                <div class="integration-pill">Process Simulate</div>
+                <div class="integration-pill">IPS IMMA</div>
+                <div class="integration-pill">Delmia</div>
+                <div class="integration-pill">Siemens Jack</div>
+                <div class="integration-pill">Xsens MVN Analyze</div>
+                <div class="integration-pill">OpenSim</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section section-dark" aria-labelledby="cta-h">
+        <div class="container text-center reveal">
+            <h2 id="cta-h" class="mb-3">Ready to assess every workstation, not just a sample?</h2>
+            <p class="lead mb-4" style="color:rgba(255,255,255,0.78)">Open the dashboard or get in touch — we'll help you run your first evaluation.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a class="btn btn-primary btn-lg" href="https://dashboard.easy-ergo.co">Open the dashboard</a>
+                <a class="btn btn-outline-light btn-lg" href="contact.html">Talk to us</a>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" aria-label="Site footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <p class="ee-wordmark on-dark" style="font-size:1.6rem; margin-bottom: 0.75rem"><span class="easy">Easy</span><span class="ergo">Ergo</span></p>
+                    <p style="color:rgba(255,255,255,0.7); margin:0">AI-enhanced ergonomic risk assessment for the modern factory.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Product</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#methods">Methods</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                        <li><a href="#integrations">Integrations</a></li>
+                        <li><a href="https://dashboard.easy-ergo.co">Open dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact</h5>
+                    <p style="color:rgba(255,255,255,0.7); margin:0 0 0.4rem">
+                        <i class="bi bi-geo-alt me-2"></i>Science Park Skövde, Sweden
+                    </p>
+                    <p style="color:rgba(255,255,255,0.7); margin:0">
+                        <i class="bi bi-envelope me-2"></i><a href="mailto:aitor.easyergo@gmail.com">aitor.easyergo@gmail.com</a>
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- About (Section 4) End -->
-
-
-    <!-- Video Demo Start -->
-    <div class="video wow fadeInUp py-5" data-wow-delay="0.1s">
-        <div class="container">
-            <h1 class="text-white text-center mb-2">EasyErgo Demonstration</h1>
-            <p class="text-white text-center mb-5 opacity-75">See the Dashboard's AI-powered video evaluation in action</p>
-
-            <div class="row g-4 justify-content-center mb-5">
-                <div class="col-lg-6">
-                    <p class="text-white text-center small mb-2 opacity-75">3D skeleton tracking</p>
-                    <video class="w-100 rounded shadow" autoplay muted loop playsinline>
-                        <source src="img/demo-skeleton-3d.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-lg-6">
-                    <p class="text-white text-center small mb-2 opacity-75">Live RULA / REBA scoring</p>
-                    <video class="w-100 rounded shadow" autoplay muted loop playsinline>
-                        <source src="img/demo-video-evaluation.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-lg-6">
-                    <p class="text-white text-center small mb-2 opacity-75">Full-body movement analysis</p>
-                    <video class="w-100 rounded shadow" autoplay muted loop playsinline>
-                        <source src="img/demo-walking.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <div class="col-lg-6">
-                    <p class="text-white text-center small mb-2 opacity-75">From photo to 3D body model</p>
-                    <video class="w-100 rounded shadow" autoplay muted loop playsinline>
-                        <source src="img/demo-3d-model.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-
-            <!-- Coming soon notice -->
-            <div class="text-center">
-                <p class="text-white opacity-50 small mb-0"><i class="bi bi-clock me-2"></i>Full demo video coming soon</p>
+            <div class="footer-meta d-flex flex-wrap justify-content-between gap-2">
+                <span>&copy; <span data-year>2026</span> EasyErgo. All rights reserved.</span>
+                <span>Made in Sweden.</span>
             </div>
         </div>
+    </footer>
 
-    </div>
-    <!-- Video Demo End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-8">
-                    <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Sk&ouml;vde, Sweden</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>aitor.easyergo@gmail.com</p>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.html">EasyErgo</a>, All Rights Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/site.js" defer></script>
 </body>
-
 </html>

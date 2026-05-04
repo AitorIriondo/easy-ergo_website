@@ -1,253 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>EasyErgo &mdash; About Us</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="EasyErgo team, ergonomics research, publications, Malin Eklund, Aitor Iriondo Pascual" name="keywords">
-    <meta content="Meet the EasyErgo team — a multidisciplinary group of researchers, engineers, and physiotherapists dedicated to improving workplace ergonomics." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <title>About EasyErgo — Researchers in digital human modelling and ergonomics</title>
+    <meta name="description" content="Meet the EasyErgo team — researchers in digital human modelling, ergonomics, and AI-driven multi-objective optimization. Read our peer-reviewed publications.">
+    <meta name="keywords" content="EasyErgo team, ergonomics research, digital human modelling, DHM, multi-objective optimization, Aitor Iriondo Pascual, Malin Eklund, University of Skövde, peer-reviewed ergonomics publications">
+    <meta name="theme-color" content="#0F1F3D">
+    <link rel="canonical" href="https://www.easy-ergo.co/about.html">
 
-    <!-- Google Web Fonts -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.easy-ergo.co/about.html">
+    <meta property="og:title" content="About EasyErgo — Researchers in digital human modelling and ergonomics">
+    <meta property="og:description" content="A team of researchers and engineers building AI-driven ergonomic assessment from video. Backed by years of peer-reviewed research.">
+    <meta property="og:image" content="https://www.easy-ergo.co/img/field-forms.jpg">
+
+    <link rel="icon" href="img/favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/site.css">
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <!-- Structured data: team members + a representative publication -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.easy-ergo.co/#organization",
+          "name": "EasyErgo",
+          "url": "https://www.easy-ergo.co/",
+          "email": "aitor.easyergo@gmail.com",
+          "logo": "https://www.easy-ergo.co/img/easyergo_no_background.png",
+          "address": {"@type": "PostalAddress", "addressLocality": "Skövde", "addressCountry": "SE"},
+          "founder": [
+            {"@id": "https://www.easy-ergo.co/about.html#malin"},
+            {"@id": "https://www.easy-ergo.co/about.html#aitor"}
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.easy-ergo.co/about.html#malin",
+          "name": "Malin Eklund",
+          "jobTitle": "CEO",
+          "description": "Physiotherapist and CEO of EasyErgo.",
+          "worksFor": {"@id": "https://www.easy-ergo.co/#organization"}
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.easy-ergo.co/about.html#aitor",
+          "name": "Aitor Iriondo Pascual",
+          "jobTitle": "CTO",
+          "description": "Doctor in Informatics. Research focus on simulation-based multi-objective optimization of productivity and worker well-being.",
+          "worksFor": {"@id": "https://www.easy-ergo.co/#organization"}
+        },
+        {
+          "@type": "ScholarlyArticle",
+          "name": "Development and initial usability evaluation of a digital tool for simulation-based multi-objective optimization of productivity and worker well-being",
+          "author": [
+            {"@id": "https://www.easy-ergo.co/about.html#aitor"},
+            {"name": "D. Högberg"},
+            {"name": "A. Syberfeldt"},
+            {"name": "E. Brolin"}
+          ],
+          "isPartOf": {"@type": "Periodical", "name": "Advanced Engineering Informatics"},
+          "datePublished": "2024"
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light d-none d-lg-block">
-        <div class="row align-items-center top-bar">
-            <div class="col-lg-3 col-md-12 text-center text-lg-start">
-                <a href="index.html" class="navbar-brand m-0 p-0">
-                    <h1 class="text-primary m-0">EasyErgo</h1>
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg" aria-label="Primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" aria-label="EasyErgo home">
+                    <span class="ee-wordmark" style="font-size:1.5rem"><span class="easy">Easy</span><span class="ergo">Ergo</span></span>
                 </a>
-            </div>
-            <div class="col-lg-9 col-md-12 text-end">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                    <p class="m-0">Sk&ouml;vde, Sweden</p>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <i class="far fa-envelope-open text-primary me-2"></i>
-                    <p class="m-0">aitor.easyergo@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-
-    <!-- Navbar Start -->
-    <div class="container-fluid nav-bar bg-light">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
-            <a href="index.html" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
-                <h1 class="text-primary m-0">EasyErgo</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav me-auto">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link active">About us</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    <a href="https://dashboard.easy-ergo.co" class="nav-item nav-link">Dashboard</a>
-                    <a href="privacy.html" class="nav-item nav-link">Privacy</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#methods">Methods</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#demo">Demo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#integrations">Integrations</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                            <a class="btn-dashboard" href="https://dashboard.easy-ergo.co">Open Dashboard</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-    </div>
-    <!-- Navbar End -->
+    </header>
 
-
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 py-5">
+    <main id="main">
+    <!-- Page banner -->
+    <section class="page-banner">
         <div class="container">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">About Us</h1>
+            <p class="crumb">About</p>
+            <h1>Researchers building the ergonomics tool we wished we had.</h1>
         </div>
-    </div>
-    <!-- Page Header End -->
+    </section>
 
-    <!-- About Start -->
-    <div class="container-xxl py-5">
+    <!-- About body -->
+    <section class="section">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="text-secondary text-uppercase">About Us</h6>
-                    <h1 class="mb-4">We Are Ergonomists and Researchers In Virtual Ergonomics</h1>
-                    <p class="mb-4">At EasyErgo, we blend the power of innovative technology with a deep passion for occupational health. Our journey brings together years of experience in scientific research, software development, physiotherapy, and workplace ergonomics &mdash; a combination that allows us to see workplace challenges from every angle. We know the realities of working life, the science behind human well-being, and the potential of digital tools to bridge the gap between the two.</p>
-                    <p class="mb-4">This unique mix of skills and perspectives drives us to design solutions that are both powerful and practical. Our tools are built to be intuitive for professionals in the field, yet grounded in rigorous, evidence-based methods. We believe that improving occupational health is not just about reducing risks, but also about enabling people to work at their best &mdash; safer, healthier, and with greater satisfaction.</p>
-                    <p class="mb-0">By combining our expertise, we've created EasyErgo as a platform where meaningful technology meets real-world impact, helping professionals everywhere make confident, data-driven decisions that truly improve working lives.</p>
+            <div class="row g-5 align-items-start justify-content-center">
+                <div class="col-lg-9 reveal">
+                    <p class="eyebrow">Who we are</p>
+                    <h2 class="mb-3">A small team. A long research lineage.</h2>
+                    <p>EasyErgo combines deep occupational-health research with modern computer vision and 3D reconstruction. We come from physiotherapy, software engineering and academic research in digital human modelling — and we built the platform because the everyday ergonomics workflow is still mostly stopwatches and paper forms.</p>
+                    <p>The goal is simple to state and hard to do well: every workstation, every shift, scored the same way, with the source and version on every result so an audit always has a clear trail. Same workflow whether you're an ergonomist with a thousand assessments behind you or a plant manager running your first one.</p>
+                    <p class="mb-0">We're based in <strong>Skövde, Sweden</strong> — spun out of research at the <a href="https://www.his.se/en/" target="_blank" rel="noopener">University of Skövde</a>, the Swedish hub for digital manufacturing research — and we work closely with the academic community there.</p>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- About End -->
+    </section>
 
-
-    <!-- Team Start -->
-    <div class="container-xxl py-5">
+    <!-- Team -->
+    <section class="section section-light" aria-labelledby="team-h">
         <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-secondary text-uppercase">Our People</h6>
-                <h1 class="mb-5">Meet the Team</h1>
+            <div class="text-center reveal mb-5">
+                <p class="eyebrow">Our people</p>
+                <h2 id="team-h">The founders</h2>
             </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-0.jpg" style="height: 300px; object-fit: cover;" alt="Malin Eklund, CEO">
-                        </div>
-                        <div class="team-text">
-                            <div class="bg-light text-center p-3">
-                                <h5 class="fw-bold mb-0">Malin Eklund</h5>
-                                <small class="text-secondary">CEO &mdash; Physiotherapist</small>
-                            </div>
-                        </div>
+            <div class="team-grid reveal">
+                <article class="team-card">
+                    <img src="img/team-0.jpg" alt="Portrait of Malin Eklund, CEO of EasyErgo">
+                    <div class="body">
+                        <h5>Malin Eklund</h5>
+                        <p class="role">CEO · Physiotherapist</p>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="img/team-1.jfif" style="height: 300px; object-fit: cover;" alt="Aitor Iriondo Pascual, CTO">
-                        </div>
-                        <div class="team-text">
-                            <div class="bg-light text-center p-3">
-                                <h5 class="fw-bold mb-0">Aitor Iriondo Pascual</h5>
-                                <small class="text-secondary">CTO &mdash; Doctor in Informatics</small>
-                            </div>
-                        </div>
+                </article>
+                <article class="team-card">
+                    <img src="img/team-1.jfif" alt="Portrait of Aitor Iriondo Pascual, CTO of EasyErgo">
+                    <div class="body">
+                        <h5>Aitor Iriondo Pascual</h5>
+                        <p class="role">CTO · Doctor in Informatics</p>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
-    </div>
-    <!-- Team End -->
+    </section>
 
-
-    <!-- Publications Start -->
-    <div class="container-xxl py-5 bg-light">
+    <!-- Publications -->
+    <section class="section" aria-labelledby="pubs-h">
         <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-secondary text-uppercase">Research</h6>
-                <h1 class="mb-4">Our Publications</h1>
-                <p class="lead mb-5">
-                    EasyErgo is the result of years of rigorous research in digital human modeling, ergonomics, and AI-driven optimization. Our work is grounded in scientific methods and validated through peer-reviewed publications.
-                </p>
+            <div class="text-center reveal mb-4">
+                <p class="eyebrow">Research foundation</p>
+                <h2 id="pubs-h" class="mb-3">Peer-reviewed publications</h2>
+                <p class="lead-muted col-lg-8 mx-auto">EasyErgo is built on years of research in digital human modelling, ergonomics, and AI-driven optimization — published, reviewed, and defended.</p>
             </div>
 
-            <!-- Publications List -->
             <div class="row justify-content-center">
-                <div class="col-lg-10">
+                <div class="col-lg-10 reveal">
                     <ul class="publication-list">
                         <li>
-                            <strong>Iriondo Pascual, A.; H&ouml;gberg, D.; Syberfeldt, A.; Brolin, E.,</strong> <em>Development and initial usability evaluation of a digital tool for simulation-based multi-objective optimization of productivity and worker well-being.</em> Advanced Engineering Informatics (2024).
+                            <strong>Iriondo Pascual, A.; Högberg, D.; Syberfeldt, A.; Brolin, E.</strong> <em>Development and initial usability evaluation of a digital tool for simulation-based multi-objective optimization of productivity and worker well-being.</em> Advanced Engineering Informatics (2024).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.; Eklund, M.; H&ouml;gberg, D.,</strong> <em>Towards automated hand force predictions: Use of random forest to classify hand postures.</em> IEA 2024&mdash;22nd Triennial Congress of the International Ergonomics Association (2024).
+                            <strong>Iriondo Pascual, A.; Eklund, M.; Högberg, D.</strong> <em>Towards automated hand force predictions: Use of random forest to classify hand postures.</em> IEA 2024 — 22nd Triennial Congress of the International Ergonomics Association (2024).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.,</strong> <em>Simulation-based multi-objective optimization of productivity and worker well-being.</em> Doctoral thesis, University of Sk&ouml;vde (2023).
+                            <strong>Iriondo Pascual, A.</strong> <em>Simulation-based multi-objective optimization of productivity and worker well-being.</em> Doctoral thesis, University of Skövde (2023).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.; Lind, A.; H&ouml;gberg, D.; Syberfeldt, A.; Hanson, L.,</strong> <em>Enabling concurrent multi-objective optimization of worker well-being and productivity in DHM tools.</em> Proceedings of the 10th Swedish Production Symposium (SPS 2022).
+                            <strong>Iriondo Pascual, A.; Lind, A.; Högberg, D.; Syberfeldt, A.; Hanson, L.</strong> <em>Enabling concurrent multi-objective optimization of worker well-being and productivity in DHM tools.</em> Proceedings of the 10th Swedish Production Symposium (SPS 2022).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.; Smedberg, H.; H&ouml;gberg, D.; Syberfeldt, A.; L&auml;mkull, D.,</strong> <em>Enabling knowledge discovery in multi-objective optimizations of worker well-being and productivity.</em> Sustainability (2022).
+                            <strong>Iriondo Pascual, A.; Smedberg, H.; Högberg, D.; Syberfeldt, A.; Lämkull, D.</strong> <em>Enabling knowledge discovery in multi-objective optimizations of worker well-being and productivity.</em> Sustainability (2022).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.; H&ouml;gberg, D.; Syberfeldt, A.; Brolin, E.; P&eacute;rez Luque, E.; Hanson, L.; L&auml;mkull, D.,</strong> <em>Multi-objective optimization of ergonomics and productivity by using an optimization framework.</em> IEA 2021 Proceedings (2021&ndash;2022).
+                            <strong>Iriondo Pascual, A.; Högberg, D.; Syberfeldt, A.; Brolin, E.; Pérez Luque, E.; Hanson, L.; Lämkull, D.</strong> <em>Multi-objective optimization of ergonomics and productivity by using an optimization framework.</em> IEA 2021 Proceedings (2021–2022).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.; H&ouml;gberg, D.; L&auml;mkull, D.; P&eacute;rez Luque, E.; Syberfeldt, A.; Hanson, L.,</strong> <em>Optimization of productivity and worker well-being by using a multi-objective optimization framework.</em> IISE Transactions on Occupational Ergonomics and Human Factors (2021).
+                            <strong>Iriondo Pascual, A.; Högberg, D.; Lämkull, D.; Pérez Luque, E.; Syberfeldt, A.; Hanson, L.</strong> <em>Optimization of productivity and worker well-being by using a multi-objective optimization framework.</em> IISE Transactions on Occupational Ergonomics and Human Factors (2021).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.; H&ouml;gberg, D.; Syberfeldt, A.; Garc&iacute;a Rivera, F.; P&eacute;rez Luque, E.; Hanson, L.,</strong> <em>Implementation of ergonomics evaluation methods in a multi-objective optimization framework.</em> DHM 2020 Proceedings (2020).
+                            <strong>Iriondo Pascual, A.; Högberg, D.; Syberfeldt, A.; García Rivera, F.; Pérez Luque, E.; Hanson, L.</strong> <em>Implementation of ergonomics evaluation methods in a multi-objective optimization framework.</em> DHM 2020 Proceedings (2020).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.; H&ouml;gberg, D.; Syberfeldt, A.; Brolin, E.; Hanson, L.,</strong> <em>Optimizing ergonomics and productivity by connecting DHM and production flow simulation software.</em> SPS 2020 Proceedings (2020).
+                            <strong>Iriondo Pascual, A.; Högberg, D.; Syberfeldt, A.; Brolin, E.; Hanson, L.</strong> <em>Optimizing ergonomics and productivity by connecting DHM and production flow simulation software.</em> SPS 2020 Proceedings (2020).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.,</strong> <em>Simulation-Based Multi-Objective Optimization of Ergonomic and Productivity Factors.</em> Report (2019).
+                            <strong>Iriondo Pascual, A.</strong> <em>Simulation-Based Multi-Objective Optimization of Ergonomic and Productivity Factors.</em> Report (2019).
                         </li>
                         <li>
-                            <strong>Iriondo Pascual, A.; H&ouml;gberg, D.; Syberfeldt, A.; Brolin, E.; Hanson, L.; P&eacute;rez Luque, E.,</strong> <em>Application of multi-objective optimization on ergonomics in production: A case study.</em> AHFE 2019 Proceedings (2020).
+                            <strong>Iriondo Pascual, A.; Högberg, D.; Syberfeldt, A.; Brolin, E.; Hanson, L.; Pérez Luque, E.</strong> <em>Application of multi-objective optimization on ergonomics in production: A case study.</em> AHFE 2019 Proceedings (2020).
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- Publications End -->
+    </section>
 
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-8">
-                    <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Sk&ouml;vde, Sweden</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>aitor.easyergo@gmail.com</p>
-                </div>
+    <!-- CTA -->
+    <section class="section section-dark" aria-labelledby="about-cta-h">
+        <div class="container text-center reveal">
+            <h2 id="about-cta-h" class="mb-3">Want to put the research to work?</h2>
+            <p class="lead mb-4" style="color:rgba(255,255,255,0.78)">Open the dashboard or get in touch — we'll help you get started.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a class="btn btn-primary btn-lg" href="https://dashboard.easy-ergo.co">Open the dashboard</a>
+                <a class="btn btn-outline-light btn-lg" href="contact.html">Talk to us</a>
             </div>
         </div>
+    </section>
+    </main>
+
+    <!-- Footer (same as index) -->
+    <footer class="site-footer" aria-label="Site footer">
         <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.html">EasyErgo</a>, All Rights Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <!--/*** This template is free as long as you keep the footer author's credit link/attribution link/backlink. If you'd like to use the template without the footer author's credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <p class="ee-wordmark on-dark" style="font-size:1.6rem; margin-bottom: 0.75rem"><span class="easy">Easy</span><span class="ergo">Ergo</span></p>
+                    <p style="color:rgba(255,255,255,0.7); margin:0">AI-enhanced ergonomic risk assessment for the modern factory.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Product</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html#methods">Methods</a></li>
+                        <li><a href="index.html#demo">Demo</a></li>
+                        <li><a href="index.html#integrations">Integrations</a></li>
+                        <li><a href="https://dashboard.easy-ergo.co">Open dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact</h5>
+                    <p style="color:rgba(255,255,255,0.7); margin:0 0 0.4rem">
+                        <i class="bi bi-geo-alt me-2"></i>Science Park Skövde, Sweden
+                    </p>
+                    <p style="color:rgba(255,255,255,0.7); margin:0">
+                        <i class="bi bi-envelope me-2"></i><a href="mailto:aitor.easyergo@gmail.com">aitor.easyergo@gmail.com</a>
+                    </p>
                 </div>
             </div>
+            <div class="footer-meta d-flex flex-wrap justify-content-between gap-2">
+                <span>&copy; <span data-year>2026</span> EasyErgo. All rights reserved.</span>
+                <span>Made in Sweden.</span>
+            </div>
         </div>
-    </div>
-    <!-- Footer End -->
+    </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top"><i class="bi bi-arrow-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/site.js" defer></script>
 </body>
-
 </html>

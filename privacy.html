@@ -1,210 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <title>EasyErgo - Privacy & Data Protection</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="EasyErgo privacy policy" name="keywords">
-    <meta content="Privacy and data protection information for EasyErgo users." name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <title>Privacy — EasyErgo</title>
+    <meta name="description" content="EasyErgo's privacy notice. How we handle account data, assessment content, videos, and sensor data under GDPR.">
+    <meta name="theme-color" content="#0F1F3D">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.easy-ergo.co/privacy.html">
 
-    <!-- Google Web Fonts -->
+    <link rel="icon" href="img/favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
-    <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-            <span class="sr-only">Loading...</span>
-        </div>
-    </div>
-    <!-- Spinner End -->
-
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-light d-none d-lg-block">
-        <div class="row align-items-center top-bar">
-            <div class="col-lg-3 col-md-12 text-center text-lg-start">
-                <a href="index.html" class="navbar-brand m-0 p-0">
-                    <h1 class="text-primary m-0">EasyErgo</h1>
+    <!-- Header -->
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg" aria-label="Primary">
+            <div class="container">
+                <a class="navbar-brand" href="index.html" aria-label="EasyErgo home">
+                    <span class="ee-wordmark" style="font-size:1.5rem"><span class="easy">Easy</span><span class="ergo">Ergo</span></span>
                 </a>
-            </div>
-            <div class="col-lg-9 col-md-12 text-end">
-                <div class="h-100 d-inline-flex align-items-center me-4">
-                    <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                    <p class="m-0">Skövde, Sweden</p>
-                </div>
-                <div class="h-100 d-inline-flex align-items-center">
-                    <i class="far fa-envelope-open text-primary me-2"></i>
-                    <p class="m-0">aitor.easyergo@gmail.com</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Topbar End -->
-
-    <!-- Navbar Start -->
-    <div class="container-fluid nav-bar bg-light">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white p-3 py-lg-0 px-lg-4">
-            <a href="index.html" class="navbar-brand d-flex align-items-center m-0 p-0 d-lg-none">
-                <h1 class="text-primary m-0">EasyErgo</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav me-auto">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About us</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
-                    <a href="https://dashboard.easy-ergo.co" class="nav-item nav-link">Dashboard</a>
-                    <a href="privacy.html" class="nav-item nav-link active">Privacy</a>
-
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#methods">Methods</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#demo">Demo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#integrations">Integrations</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                            <a class="btn-dashboard" href="https://dashboard.easy-ergo.co">Open Dashboard</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
-    </div>
-    <!-- Navbar End -->
+    </header>
 
-    <!-- Page Header Start -->
-    <div class="container-fluid page-header mb-5 py-5 bg-primary bg-opacity-75">
-        <div class="container text-center py-5">
-            <h1 class="display-4 text-white animated slideInDown mb-3">Privacy & Data Protection</h1>
-            <p class="text-white-50 mb-0">
-                How EasyErgo handles your data and how you can contact us at any time to have it removed.
-            </p>
-        </div>
-    </div>
-    <!-- Page Header End -->
-
-    <!-- Privacy Content Start -->
-    <div class="container-xxl py-5">
+    <main id="main">
+    <section class="page-banner">
         <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-10 mx-auto wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="text-secondary text-uppercase">Privacy</h6>
-                    <h1 class="mb-4">Your Privacy at EasyErgo</h1>
-                    <p class="mb-4">
-                        At EasyErgo, we take privacy and data protection seriously. Our tools are designed to support workplace well-being
-                        while ensuring that all personal and organizational data is handled securely, transparently, and in line with
-                        applicable data protection regulations, including the GDPR.
-                    </p>
+            <p class="crumb">Legal</p>
+            <h1>Privacy</h1>
+        </div>
+    </section>
 
-                    <h3 class="mt-4 mb-3">What Data We Collect</h3>
-                    <p class="mb-3">
-                        Depending on how you use EasyErgo products (the EasyErgo Android app, EasySense sensors, and the EasyErgo Dashboard/Server),
-                        we may collect and process:
-                    </p>
-                    <ul class="mb-3">
-                        <li><strong>Account information</strong> such as email address, name, organization, and role.</li>
-                        <li><strong>Assessment data</strong> such as images, videos, sensor readings, task descriptions, notes, scores, and reports
-                            created during ergonomics evaluations.</li>
-                        <li><strong>Technical and usage data</strong> such as device type, operating system, app version, and basic usage logs to
-                            improve stability, performance, and user experience.</li>
+    <section class="section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <article class="col-lg-9">
+                    <p class="lead-muted">EasyErgo takes privacy and data protection seriously. The platform is designed to support workplace well-being while ensuring that all personal and organizational data is handled securely, transparently, and in line with applicable data-protection regulations, including the GDPR.</p>
+
+                    <h3 class="mt-5">What data we collect</h3>
+                    <p>When you use the EasyErgo platform (the web dashboard at <a href="https://dashboard.easy-ergo.co">dashboard.easy-ergo.co</a>) we may collect and process:</p>
+                    <ul>
+                        <li><strong>Account information</strong> — email address, name, organisation, and role.</li>
+                        <li><strong>Assessment content</strong> — videos, images, task descriptions, notes, ergonomic scores and reports created during evaluations.</li>
+                        <li><strong>Technical and usage data</strong> — browser, operating system, dashboard version, and basic usage logs to improve stability, performance, and user experience.</li>
                     </ul>
-                    <p class="mb-4">
-                        We do <strong>not</strong> sell your data to third parties. Data is only shared with service providers when necessary to
-                        operate our services (for example, secure cloud hosting) or when required by law.
-                    </p>
+                    <p>We do <strong>not</strong> sell your data to third parties. Data is shared only with service providers when necessary to operate the platform (for example, secure cloud hosting) or when required by law.</p>
 
-                    <h3 class="mt-4 mb-3">How We Use Your Data</h3>
-                    <p class="mb-3">
-                        We use the data we collect for the following purposes:
-                    </p>
-                    <ul class="mb-3">
-                        <li><strong>To provide and maintain the EasyErgo services</strong> you use, including storage of assessments, images,
-                            sensor data, and reports.</li>
-                        <li><strong>To support ergonomics work</strong> by enabling analysis, documentation, and reporting of workplace assessments.</li>
-                        <li><strong>To improve our tools</strong> and user experience, for example by understanding how features are used and
-                            identifying issues or bottlenecks.</li>
+                    <h3 class="mt-5">How we use your data</h3>
+                    <ul>
+                        <li><strong>To provide and maintain the platform</strong>, including storing assessments, videos and reports.</li>
+                        <li><strong>To support ergonomics work</strong> by enabling analysis, documentation and reporting of workplace evaluations.</li>
+                        <li><strong>To improve the platform</strong> — understanding how features are used and identifying bottlenecks.</li>
                         <li><strong>To provide customer support</strong> and respond to questions or technical issues.</li>
                         <li><strong>To ensure security and reliability</strong>, including preventing misuse and protecting data integrity.</li>
                     </ul>
-                    <p class="mb-4">
-                        We apply appropriate technical and organizational measures, such as encryption and access control, to keep your data safe.
-                    </p>
+                    <p>We apply appropriate technical and organisational measures, such as encryption and access control, to keep your data safe.</p>
 
-                    <h3 class="mt-4 mb-3">Legal Basis & Data Responsibility</h3>
-                    <p class="mb-4">
-                        Where the GDPR applies, EasyErgo AB typically processes personal data on the basis of:
-                    </p>
-                    <ul class="mb-3">
-                        <li><strong>Legitimate interest</strong> in providing and improving our ergonomics tools and services.</li>
-                        <li><strong>Contractual necessity</strong> when we provide services under an agreement with you or your organization.</li>
-                        <li><strong>Consent</strong> when explicitly required for specific features or data processing activities.</li>
+                    <h3 class="mt-5">Legal basis &amp; data responsibility</h3>
+                    <p>Where the GDPR applies, EasyErgo AB typically processes personal data on the basis of:</p>
+                    <ul>
+                        <li><strong>Legitimate interest</strong> in providing and improving the platform.</li>
+                        <li><strong>Contractual necessity</strong> when we provide services under an agreement with you or your organisation.</li>
+                        <li><strong>Consent</strong> when explicitly required for specific features.</li>
                     </ul>
-                    <p class="mb-4">
-                        In most professional settings, your organization acts as the primary data controller for assessment content
-                        (evaluations, notes, and images), and EasyErgo AB acts as a data processor providing the platform. We can adapt
-                        to specific data processing agreements where required.
-                    </p>
+                    <p>In most professional settings, your organisation acts as the primary data controller for assessment content (evaluations, notes, videos), and EasyErgo AB acts as a data processor providing the platform. We can adapt to specific data-processing agreements where required.</p>
 
-                    <h3 class="mt-4 mb-3">Data Retention</h3>
-                    <p class="mb-4">
-                        Data is retained for as long as it is needed to provide the services you use, fulfill contractual or legal
-                        obligations, or as agreed with your organization. You can request deletion of your data at any time (see below),
-                        and we will respect applicable legal and contractual requirements when processing such requests.
-                    </p>
+                    <h3 class="mt-5">Data retention</h3>
+                    <p>Data is retained for as long as it is needed to provide the services you use, fulfil contractual or legal obligations, or as agreed with your organisation. You can request deletion of your data at any time (see below).</p>
 
-                    <h3 class="mt-4 mb-3">Your Rights</h3>
-                    <p class="mb-3">
-                        As a data subject under the GDPR and similar regulations, you have the right to:
-                    </p>
-                    <ul class="mb-3">
+                    <h3 class="mt-5">Your rights</h3>
+                    <p>As a data subject under the GDPR and similar regulations, you have the right to:</p>
+                    <ul>
                         <li><strong>Access</strong> the personal data we store about you.</li>
                         <li><strong>Request correction</strong> of inaccurate or incomplete data.</li>
                         <li><strong>Request deletion</strong> of your personal data, subject to legal and contractual obligations.</li>
                         <li><strong>Restrict or object</strong> to certain types of processing.</li>
                         <li><strong>Withdraw consent</strong> where processing is based on your consent.</li>
                     </ul>
-                    <p class="mb-4">
-                        If your EasyErgo account is provided through your employer or organization, some requests may need to be handled
-                        together with your local administrator or contact person.
-                    </p>
+                    <p>If your EasyErgo account is provided through your employer or organisation, some requests may need to be handled together with your local administrator or contact person.</p>
 
-                    <h3 class="mt-4 mb-3">Requesting Data Deletion</h3>
-                    <p class="mb-3">
-                        You can contact us at any time to request the deletion of all data associated with your account or organization
-                        that we control.
-                    </p>
-                    <p class="mb-3">
-                        When you submit a deletion request, we will:
-                    </p>
-                    <ul class="mb-3">
-                        <li>Confirm your identity or authorization for the account/organization if needed.</li>
+                    <h3 class="mt-5">Requesting data deletion</h3>
+                    <p>You can contact us at any time to request the deletion of all data associated with your account or organisation that we control. When you submit a deletion request we will:</p>
+                    <ul>
+                        <li>Confirm your identity or authorisation for the account/organisation if needed.</li>
                         <li>Delete the relevant data from our active systems, unless we are legally required to retain some records.</li>
                         <li>Provide a confirmation once the deletion is complete.</li>
                     </ul>
-                    <p class="mb-4">
-                        We are committed to handling deletion requests promptly. In normal cases, we will remove your data
-                        <strong>within 7 days</strong> from the moment we confirm your request. If exceptional circumstances require longer
-                        (for example, legal obligations or backup processes), we will inform you and explain the reason.
-                    </p>
+                    <p>In normal cases we will remove your data <strong>within 7 days</strong> of confirming your request. If exceptional circumstances require longer (legal obligations or backup-rotation processes), we will inform you and explain the reason.</p>
 
-                    <h3 class="mt-4 mb-3">How to Contact Us</h3>
-                    <p class="mb-3">
-                        For any questions about privacy, data protection, or to request access, correction, or deletion of your data,
-                        you can contact us using the details below:
-                    </p>
+                    <h3 class="mt-5">How to contact us</h3>
+                    <p>For any questions about privacy, data protection, or to request access, correction, or deletion of your data:</p>
                     <p class="mb-2">
                         <strong>Email (privacy &amp; data requests):</strong> <a href="mailto:privacy@easyergo.co">privacy@easyergo.co</a><br>
                         <strong>General contact:</strong> <a href="mailto:aitor.easyergo@gmail.com">aitor.easyergo@gmail.com</a>
@@ -214,56 +124,55 @@
                         Skövde, Sweden
                     </p>
 
-                    <p class="text-muted mb-0">
-                        We may update this privacy section as our services evolve or as regulations change. The latest version will always be
-                        available on this page.
+                    <p class="muted">We may update this notice as the platform evolves or as regulations change. The latest version is always available on this page.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Site footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <p class="ee-wordmark on-dark" style="font-size:1.6rem; margin-bottom: 0.75rem"><span class="easy">Easy</span><span class="ergo">Ergo</span></p>
+                    <p style="color:rgba(255,255,255,0.7); margin:0">AI-enhanced ergonomic risk assessment for the modern factory.</p>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Product</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html#methods">Methods</a></li>
+                        <li><a href="index.html#demo">Demo</a></li>
+                        <li><a href="index.html#integrations">Integrations</a></li>
+                        <li><a href="https://dashboard.easy-ergo.co">Open dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Company</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Contact</h5>
+                    <p style="color:rgba(255,255,255,0.7); margin:0 0 0.4rem">
+                        <i class="bi bi-geo-alt me-2"></i>Science Park Skövde, Sweden
+                    </p>
+                    <p style="color:rgba(255,255,255,0.7); margin:0">
+                        <i class="bi bi-envelope me-2"></i><a href="mailto:aitor.easyergo@gmail.com">aitor.easyergo@gmail.com</a>
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Privacy Content End -->
-
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-lg-4 col-md-8">
-                    <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Sk&ouml;vde, Sweden</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>aitor.easyergo@gmail.com</p>
-                </div>
+            <div class="footer-meta d-flex flex-wrap justify-content-between gap-2">
+                <span>&copy; <span data-year>2026</span> EasyErgo. All rights reserved.</span>
+                <span>Made in Sweden.</span>
             </div>
         </div>
-        <div class="container">
-            <div class="copyright">
-                <div class="row">
-                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="index.html">EasyErgo</a>, All Rights Reserved.
-                    </div>
-                    <div class="col-md-6 text-center text-md-end">
-                        <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
+    </footer>
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-0 back-to-top">
-        <i class="bi bi-arrow-up"></i>
-    </a>
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/site.js" defer></script>
 </body>
-
 </html>

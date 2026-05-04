@@ -1,0 +1,12 @@
+{
+    "name": "EasyErgo",
+    "short_name": "EasyErgo",
+    "description": "AI ergonomic risk assessment from video — RULA, REBA, AFF, NIOSH, KIM, QEC.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0F1F3D",
+    "theme_color": "#0F1F3D",
+    "icons": [
+        {"src": "img/easyergo_no_background.png", "sizes": "512x512", "type": "image/png"}
+    ]
+}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /lib/
+
+Sitemap: https://www.easy-ergo.co/sitemap.xml
